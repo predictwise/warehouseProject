@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="well well-large" style="height:800px;">
+    <div class="span8">
+        <div class="row-fluid">
+            <div id="title_author" class="span12">
+                <h2>{{ model.title }}</h2>
+                <h3>by {{ model.author }}</h3>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div id="image" class="span12" style="overflow:hidden;">
+                <img alt="{{ model.title }}" src="{{ '/static/img/'~model.id~'.jpg' }}" style="width:600px;height:350px;">
+            </div>
+        </div>
+        <br>
+        <div class="row-fluid">
+            <div id="description" class="span12" style="width:600px;">
+                {{ model.desc }}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="span4">
+        <div class="row-fluid">
+            <div class="span12">
+                <br><br><br><br><br>
+                <table>
+                    <tr>
+                        <td>
+                            <h4>Downloads</h4>
+                        </td>
+                        <td align="right" width="140px">
+                            <span>{{ other['Downloads'] }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Likes</h4>
+                        </td>
+                        <td align="right">
+                            <span>{{ other['Likes'] }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>.skp File Size</h4>
+                        </td>
+                        <td align="right">
+                            <span>{{ other['.skp File Size'] }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Polygons</h4>
+                        </td>
+                        <td align="right">
+                            <span>{{ other['Polygons'] }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Materials</h4>
+                        </td>
+                        <td align="right">
+                            <span>{{ other['Materials'] }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Uploaded</h4>
+                        </td>
+                        <td align="right">
+                            <span>{{ other['Uploaded'] }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Last Modified</h4>
+                        </td>
+                        <td align="right">
+                            <span>{{ other['Last Modified'] }}</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row-fluid">
+            <div id="header-tags" class="metadata-section-title">
+                <h4>Tags</h4>
+            </div>
+            <div id="tags" class="display-field tags-content">
+                {{ model.tags}}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
